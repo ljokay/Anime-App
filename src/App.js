@@ -1,15 +1,27 @@
 import React from 'react';
 import './App.css';
-import NavBar from './Components/Nav';
-import Compare from './Components/Compare';
+import './background.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MainPage from './Components/MainPage'
+import AnimeInfo from './Components/AnimeInfo';
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <NavBar />
-      <Compare />
-    </div>
+    <Router>
+      
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+
+       
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/anime/:id" element={<AnimeInfo />} />
+          </Routes>
+        
+      
+    </Router>
   );
-}
+};
 
 export default App;

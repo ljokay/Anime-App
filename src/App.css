@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 * {
   font-family: 'Ubuntu';
@@ -6,6 +7,14 @@ ul {
   list-style-type: none;
   padding: 0;
   text-align: center;
+}
+img {
+   
+}
+
+
+body {
+  background-color: #555;
 }
 
 /* Nav Bar CSS */
@@ -44,21 +53,237 @@ ul {
 /* Grid Layout */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  grid-template-rows: repeat(2, 400px); 
-  gap: 10px; 
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, 500px); 
+  gap: 20px; 
 }
 
+
 .grid-item {
-  background-color: lightblue;
-  border: 1px solid #333;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  border: 2px solid transparent; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.grid-item:hover {
+  /* Change the gradient slightly on hover */
+  background: linear-gradient(135deg, #feb47b, #ff7e5f);
+  /* Add a highlight effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); /* Optional: Slightly scale up */
 }
 
-/*Containers*/
+/*Individual Classes*/
 
 .main-con {
   border: solid red;
+}
+
+.textoptions {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  height: 100px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid red;
+  background-color: #D3D3D3;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+.textbox:hover {
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.textbox, textarea {
+  min-width: 100px;
+  max-width: 150px;
+  min-height: 50px;
+  max-height: 150px;
+  border-radius: 10px;
+  margin: 50px;
+  transition: border-color 0.3s ease-in-out;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  
+}
+.textbox:focus, textarea:focus {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-color: #4A90E2;
+  outline: none;
+}
+
+.imgCon {
+  width: 250px;  /* Define the container width */
+  height: 350px; /* Define the container height */
+  overflow: hidden; /* Hide the overflow (trim the image if it's too big) */
+  position: relative; /* Keep the image in a specific spot */
+  border-radius: 10px;
+}
+.imgCon img{
+  width: 100%;   /* Ensure the image stays within the container's width */
+  height: 100%;  /* Ensure the image stays within the container's height */
+  object-fit: cover;  /* Trim/crop the image to cover the container without stretching */
+  position: relative; /* Stay in the spot within the container */
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.largeCon {
+  display: flex;
+  justify-content: center;
+
+}
+
+.content {
+  border-top: solid black;
+  display: flex; /* Aligns .info and .imgCon next to each other */
+  justify-content: space-between; /* Space between text and image */
+  align-items: flex-start; /* Aligns image and info at the top */
+  gap: 20px; /* Adds some space between info and image */
+}
+
+.title-section {
+  height: 60px; 
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Vertically center the text */
+  justify-content: center; /* Horizontally center the text */
+  padding: 0 10px; /* Add horizontal padding if needed */
+  box-sizing: border-box;
+  margin-bottom: 50px;
+ 
+}
+/* Text*/
+
+.title {
+  text-align: center;
+}
+.large-title {
+  font-size: 2.5rem; /* Example size */
+}
+p {
+  font-size: 1.5rem;
+}
+
+
+/*Info Page*/
+
+.user-ratings {
+  width: 250px;
+  height: 300px;
+  margin-right: 100px;
+}
+.genre-con {
+  height: auto;
+  width:250px;
+  margin-top: 50px;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+
+}
+
+.genre-li {
+  padding: 10px;
+}
+
+.info-main {
+  height: auto;
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: 50px;
+  align-items: stretch;
+  
+}
+
+.info-pic-con {
+  padding: 20px;
+  min-width: 400px;
+  min-height: 500px;
+
+}
+.info-pic {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.syno {
+  min-height: 500px;
+  padding: 30px;
+  padding-top: 0;
+  margin-left: 45px;
+  width: 800px;
+}
+
+.title-con {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  min-width: 300px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  
+}
+
+.centered {
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  align-items: center;    /* Center horizontally */
+  justify-content: center; /* Center vertically (if needed) */
+  text-align: center;
+}
+
+/* Scores */
+
+.score-low {
+  color: #ff4d4d; 
+}
+.score-medium {
+  color: #ffa500; 
+}
+.score-high {
+  color: #4caf50; 
+}
+
+.extra-info {
+  margin-top: 50px;
+  width: 500px;
+}
+
+
+.border-color {
+  position: relative;
+  padding: 20px;
+  border-radius: 12px; /* Rounded corners for a modern look */
+  background-color: #ffffff; /* White background */
+  overflow: hidden; /* Ensure the shadow and border don't overflow */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow with depth */
+}
+
+.border-color:hover {
+  /* Change the gradient slightly on hover */
+  background: linear-gradient(135deg, #feb47b, #ff7e5f);
+  /* Add a highlight effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); /* Optional: Slightly scale up */
 }

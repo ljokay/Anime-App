@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <h1>Anime Compare</h1>
+        <h1>BetterMAL</h1>
       </div>
       <ul className="navbar-nav">
         <li className="nav-item"><a href="/"></a></li>

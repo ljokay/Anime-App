@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
+import { useNavigate } from 'react-router-dom';
 
 const Compare = () => {
+    const navigate = useNavigate();
     const [animeList, setAnimeList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -110,17 +112,25 @@ const Compare = () => {
         }
     };
 
+    const showExtraInfo = (title) => {
+        navigate(`/anime/${encodeURIComponent(title)}`);
+    }
+
     return (
         <div>
+            <div className="textoptions">
+            <label><b>Account Name:</b></label>
             <input
+                className="textbox"
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 onKeyDown={handleKeyPress}
                 placeholder='Enter Username'
             />
-            <label htmlFor="options">Sort By:</label>
-            <select id="options" name="options" onChange={handleSortOptions}>
+
+            <label htmlFor="options"><b>Sort By:</b></label>
+            <select className="textbox" id="options" name="options" onChange={handleSortOptions}>
                 <option value="">Select an option</option>
                 <option value="Personal Score">Personal Score</option>
                 <option value="Personal Score Descending">Personal Score Desc</option>
@@ -128,13 +138,18 @@ const Compare = () => {
                 <option value="Alphabetically Ascending">Alphabetically Ascending</option>
                 <option value="Alphabetically Descending">Alphabetically Descending</option>
             </select>
+            {loading && <p>Loading...</p>}
+            </div>
+            <div className="largeCon">
             <div className="grid-container">
-                {loading && <p>Loading...</p>}
-                {error && <p>Error: {error}</p>}
                 {animeList.map((anime) => (
-                    <div key={anime.node.id} className="grid-item">
+                    <div key={anime.node.id} className="grid-item"
+                    onClick={() => showExtraInfo(anime.node.id)}>
+                        <div className="title-section">
+                            <h2 className='large-title'>{anime.node.title}</h2>
+                        </div>
+                        <div className="content">
                         <div className="info">
-                            <h2>{anime.node.title}</h2>
                             <p><b>Score</b></p>
                             <p>{anime.list_status.score}/10</p>
                             <p><b>Episodes Watched</b></p>
@@ -142,9 +157,13 @@ const Compare = () => {
                             <p><b>Last Updated At:</b> </p>
                             <p>{moment(anime.list_status.updated_at).format('YYYY-MM-DD')}</p>
                         </div>
+                        <div className="imgCon">
                         <img src={anime.node.main_picture.medium} alt={anime.node.title} />
+                        </div>
+                    </div>
                     </div>
                 ))}
+            </div>
             </div>
         </div>
     );
