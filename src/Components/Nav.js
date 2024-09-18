@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
   return (
@@ -7,9 +8,9 @@ const NavBar = () => {
         <h1>BetterMAL</h1>
       </div>
       <ul className="navbar-nav">
+        <li className="nav-item"><a href="/main">User List</a></li>
+        <li className="nav-item"><a href="/search">Find Something New!</a></li>
         <li className="nav-item"><a href="/"></a></li>
-        <li className="nav-item"><a href="/about"></a></li>
-        <li className="nav-item"><a href="/services"></a></li>
       </ul>
     </nav>
   );
