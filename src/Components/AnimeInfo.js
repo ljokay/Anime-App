@@ -40,13 +40,13 @@ const AnimeInfo = () => {
     }, [id]);
 
     const getScoreColor = (score) => {
-        if (score < 4 || score === "r") {
+        if (score < 4 || score === "r" || score === "r+") {
             return 'score-low';
         }
         if (score > 4 && score < 7) {
             return 'score-medium';
         }
-        if (score > 7 || score === "pg_13") {
+        if (score > 7 || score === "pg_13" || score =="pg") {
             return 'score-high'
         }
     }

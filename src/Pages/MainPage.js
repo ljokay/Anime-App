@@ -1,6 +1,6 @@
 import React from "react";
-import NavBar from './Nav';
-import Compare from './Compare';
+import NavBar from '../Components/Nav';
+import Compare from '../Components/Compare';
 
 const MainPage = () => {
     return (

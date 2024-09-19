@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import NavBar from './Nav';
 
 const RandomAnime = () => {
     const navigate = useNavigate();
@@ -10,6 +11,7 @@ const RandomAnime = () => {
     const [retryCount, setRetryCount] = useState(0);
 
     const fetchRandomAnime = async () => {
+        setAnimeList([]);
         if (retryCount > 5) {
             console.log('Maximum retry count reached.');
             return;
@@ -54,6 +56,7 @@ const RandomAnime = () => {
     }
 
     const fetchSearchAnime = async () => {
+        setAnimeList([]);
         let allAnime = [];
         let nextPage = `http://localhost:5000/https://api.myanimelist.net/v2/anime?q=${encodeURIComponent(animeName)}&fields=nsfw`;
         const maxPages = 5; // Set a maximum number of pages to fetch
@@ -108,32 +111,40 @@ const RandomAnime = () => {
         }
     }, [randomNumber, operation]);
 
-    useEffect(() => {
-       
-        if (operation === "search") {
-            fetchSearchAnime(); // Fetch anime when animeName is updated and operation is "search"
-        }
-    }, [operation, animeName]);
 
     const handleSearch = () => {
         if (animeName.trim()) {
             setOperation("search");
+            fetchSearchAnime();
         }
     }
 
+    const handleKeyPress = async (event) => {
+        if (event.key === 'Enter' && animeName.trim() !== '') {
+            
+            try {
+                await fetchSearchAnime();
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    };
+
     return (
         <div>
-            <div>
+            <div className="textoptions">
                 <input
                     className="textbox"
                     type="text"
                     value={animeName}
                     onChange={(e) => setName(e.target.value)}
                     placeholder='Enter Anime Name'
+                    onKeyDown={handleKeyPress}
                 />
-                <button onClick={handleSearch}>Search</button>
-                <button onClick={handleClick}>Click For Something New!</button>
+                <button className="btn" onClick={handleSearch}>Search</button>
+                <button className="btn" onClick={handleClick}>Click For Something New!</button>
             </div>
+            <div className="largeCon">
             <div className="grid-container">
                 {animeList.map((anime) => (
                     <div key={anime.id} className="grid-item" onClick={() => navigate(`/anime/${encodeURIComponent(anime.id)}`)}>
@@ -149,6 +160,7 @@ const RandomAnime = () => {
                         </div>
                     </div>
                 ))}
+            </div>
             </div>
         </div>
     );
