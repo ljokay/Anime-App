@@ -1,4 +1,5 @@
-{
+{ 
+  "homepage": "https://ljokay.github.io/Anime-App/",
   "name": "anime-compare",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +42,10 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://api.myanimelist.net"
+  
+  "proxy": "https://api.myanimelist.net",
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+  
 }
