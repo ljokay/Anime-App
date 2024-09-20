@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/github.com/Anime-App.git/static/css/main.f66f33ef.css",
-    "main.js": "/github.com/Anime-App.git/static/js/main.4ec4af8f.js",
-    "static/js/453.f9b3b27d.chunk.js": "/github.com/Anime-App.git/static/js/453.f9b3b27d.chunk.js",
-    "index.html": "/github.com/Anime-App.git/index.html",
-    "main.f66f33ef.css.map": "/github.com/Anime-App.git/static/css/main.f66f33ef.css.map",
-    "main.4ec4af8f.js.map": "/github.com/Anime-App.git/static/js/main.4ec4af8f.js.map",
-    "453.f9b3b27d.chunk.js.map": "/github.com/Anime-App.git/static/js/453.f9b3b27d.chunk.js.map"
+    "main.css": "/Anime-App/static/css/main.f66f33ef.css",
+    "main.js": "/Anime-App/static/js/main.3e16d93f.js",
+    "static/js/453.f9b3b27d.chunk.js": "/Anime-App/static/js/453.f9b3b27d.chunk.js",
+    "index.html": "/Anime-App/index.html",
+    "main.f66f33ef.css.map": "/Anime-App/static/css/main.f66f33ef.css.map",
+    "main.3e16d93f.js.map": "/Anime-App/static/js/main.3e16d93f.js.map",
+    "453.f9b3b27d.chunk.js.map": "/Anime-App/static/js/453.f9b3b27d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f66f33ef.css",
-    "static/js/main.4ec4af8f.js"
+    "static/js/main.3e16d93f.js"
   ]
 }
