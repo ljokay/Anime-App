@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ljokay/Anime-App.git/static/css/main.f66f33ef.css",
+    "main.js": "/ljokay/Anime-App.git/static/js/main.423362a6.js",
+    "static/js/453.f9b3b27d.chunk.js": "/ljokay/Anime-App.git/static/js/453.f9b3b27d.chunk.js",
+    "index.html": "/ljokay/Anime-App.git/index.html",
+    "main.f66f33ef.css.map": "/ljokay/Anime-App.git/static/css/main.f66f33ef.css.map",
+    "main.423362a6.js.map": "/ljokay/Anime-App.git/static/js/main.423362a6.js.map",
+    "453.f9b3b27d.chunk.js.map": "/ljokay/Anime-App.git/static/js/453.f9b3b27d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f66f33ef.css",
+    "static/js/main.423362a6.js"
+  ]
+}
