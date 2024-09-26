@@ -5,7 +5,6 @@ const NavBar = () => {
     <nav className="navbar">
       <div className="navbar-brand">
         <div>
-        
         <h1>BetterMAL</h1>
         </div>
       </div>

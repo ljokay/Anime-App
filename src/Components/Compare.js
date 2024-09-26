@@ -18,7 +18,6 @@ const Compare = () => {
     }, [username]);
 
     const fetchMAL = async (username) => {
-        console.log(clientId);
         try {
             let allAnime = [];
             let nextPage = `http://localhost:5000/https://api.myanimelist.net/v2/users/${username}/animelist?status=completed&fields=list_status`;
