@@ -9,6 +9,7 @@ const RandomAnime = () => {
     const [randomNumber, setRandomNumber] = useState(0);
     const [animeName, setName] = useState('');
     const [retryCount, setRetryCount] = useState(0);
+    const clientId = process.env.REACT_APP_MAL_CLIENT_ID;
 
     const fetchRandomAnime = async () => {
         setAnimeList([]);
@@ -22,7 +23,7 @@ const RandomAnime = () => {
         try {
             const response = await fetch(url, {
                 headers: {
-                    'X-MAL-CLIENT-ID': '3170c64ae604c7ea48742c9ef2b0a262',
+                    'X-MAL-CLIENT-ID': clientId,
                 }
             });
 

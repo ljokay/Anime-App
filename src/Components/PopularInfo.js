@@ -7,6 +7,7 @@ const Popular = () => {
   const [animeList, setAnimeList] = useState([]);
   const [selection, setSelection] = useState('all');
   const [isFetching, setIsFetching] = useState(false); // New state to prevent multiple fetches
+  const clientId = process.env.REACT_APP_MAL_CLIENT_ID;
 
   const fetchTopAnime = async () => {
     let allAnime = [];
@@ -17,7 +18,7 @@ const Popular = () => {
     
         const response = await fetch(url, {
           headers: {
-            'X-MAL-CLIENT-ID': '3170c64ae604c7ea48742c9ef2b0a262',
+            'X-MAL-CLIENT-ID': clientId,
           }
         });
 

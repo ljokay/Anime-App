@@ -6,6 +6,7 @@ const AnimeInfo = () => {
     const [animeInfo, setAnimeInfo] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const clientId = process.env.REACT_APP_MAL_CLIENT_ID;
 
     useEffect(() => {
         const fetchAnimeDetails = async () => {
@@ -14,7 +15,7 @@ const AnimeInfo = () => {
                 studios, popularity, start_date, end_date, mean, num_scoring_users, studios`;
                 const response = await fetch(page, {
                     headers: {
-                        'X-MAL-CLIENT-ID': '3170c64ae604c7ea48742c9ef2b0a262',
+                        'X-MAL-CLIENT-ID': clientId,
                     }
                 });
 

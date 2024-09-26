@@ -9,6 +9,7 @@ const Compare = () => {
     const [error, setError] = useState(null);
     const [username, setUsername] = useState('LjOkay');
     const [sort, setSort] = useState('');
+    const clientId = process.env.REACT_APP_MAL_CLIENT_ID;
 
     useEffect(() => {
         if (username.trim() !== '') {
@@ -26,7 +27,7 @@ const Compare = () => {
 
                 const response = await fetch(nextPage, {
                     headers: {
-                        'X-MAL-CLIENT-ID': '3170c64ae604c7ea48742c9ef2b0a262',
+                        'X-MAL-CLIENT-ID': clientId,
                     }
                 });
 
