@@ -2,7 +2,7 @@ const express = require('express');
 const corsAnywhere = require('cors-anywhere');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 corsAnywhere.createServer({
     originWhitelist: [], // Allow all origins
