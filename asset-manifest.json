@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/anime-compare/static/css/main.f66f33ef.css",
-    "main.js": "/anime-compare/static/js/main.5b2f4d0d.js",
-    "static/js/453.f9b3b27d.chunk.js": "/anime-compare/static/js/453.f9b3b27d.chunk.js",
-    "index.html": "/anime-compare/index.html",
-    "main.f66f33ef.css.map": "/anime-compare/static/css/main.f66f33ef.css.map",
-    "main.5b2f4d0d.js.map": "/anime-compare/static/js/main.5b2f4d0d.js.map",
-    "453.f9b3b27d.chunk.js.map": "/anime-compare/static/js/453.f9b3b27d.chunk.js.map"
+    "main.css": "/Anime-App/static/css/main.f66f33ef.css",
+    "main.js": "/Anime-App/static/js/main.762ad48f.js",
+    "static/js/453.f9b3b27d.chunk.js": "/Anime-App/static/js/453.f9b3b27d.chunk.js",
+    "index.html": "/Anime-App/index.html",
+    "main.f66f33ef.css.map": "/Anime-App/static/css/main.f66f33ef.css.map",
+    "main.762ad48f.js.map": "/Anime-App/static/js/main.762ad48f.js.map",
+    "453.f9b3b27d.chunk.js.map": "/Anime-App/static/js/453.f9b3b27d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f66f33ef.css",
-    "static/js/main.5b2f4d0d.js"
+    "static/js/main.762ad48f.js"
   ]
 }
