@@ -20,7 +20,7 @@ const Compare = () => {
     const fetchMAL = async (username) => {
         try {
             let allAnime = [];
-            let nextPage = `http://localhost:5000/https://api.myanimelist.net/v2/users/${username}/animelist?status=completed&fields=list_status`;
+            let nextPage = `https://tranquil-thicket-28555.herokuapp.com/https://api.myanimelist.net/v2/users/${username}/animelist?status=completed&fields=list_status`;
 
             while (nextPage) {
                 console.log('Fetching:', nextPage);
@@ -39,7 +39,7 @@ const Compare = () => {
                 console.log('Result:', result);
 
                 allAnime = [...allAnime, ...result.data];
-                nextPage = result.paging?.next ? `http://localhost:5000/${result.paging.next}` : null;
+                nextPage = result.paging?.next ? `https://tranquil-thicket-28555.herokuapp.com/${result.paging.next}` : null;
 
                 console.log('Next Page:', nextPage);
             }
