@@ -9,7 +9,7 @@ import SearchPage from './Pages/Search';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/Anime-App">
       
         <div className="wave"></div>
         <div className="wave"></div>
