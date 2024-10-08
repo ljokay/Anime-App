@@ -20,13 +20,14 @@ const Compare = () => {
     const fetchMAL = async (username) => {
         try {
             let allAnime = [];
-            let nextPage = `https://tranquil-thicket-28555.herokuapp.com/https://api.myanimelist.net/v2/users/${username}/animelist?status=completed&fields=list_status`;
+            let nextPage = `https://cors-anywhere.herokuapp.com/https://api.myanimelist.net/v2/users/${username}/animelist?status=completed&fields=list_status`;
 
             while (nextPage) {
                 console.log('Fetching:', nextPage);
 
                 const response = await fetch(nextPage, {
                     headers: {
+                        'Origin': 'https://ljokay.github.io',
                         'X-MAL-CLIENT-ID': clientId,
                         'X-Requested-With': 'XMLHttpRequest',
                         'Accept': 'application/json',
@@ -41,7 +42,7 @@ const Compare = () => {
                 console.log('Result:', result);
 
                 allAnime = [...allAnime, ...result.data];
-                nextPage = result.paging?.next ? `https://tranquil-thicket-28555.herokuapp.com${result.paging.next}` : null;
+                nextPage = result.paging?.next ? `https://cors-anywhere.herokuapp.com/${result.paging.next}` : null;
 
                 console.log('Next Page:', nextPage);
             }
