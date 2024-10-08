@@ -28,6 +28,8 @@ const Compare = () => {
                 const response = await fetch(nextPage, {
                     headers: {
                         'X-MAL-CLIENT-ID': clientId,
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Accept': 'application/json',
                     }
                 });
 
