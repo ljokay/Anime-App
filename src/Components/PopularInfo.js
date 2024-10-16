@@ -11,7 +11,7 @@ const Popular = () => {
 
   const fetchTopAnime = async () => {
     let allAnime = [];
-    const url = `http://localhost:5000/https://api.myanimelist.net/v2/anime/ranking?ranking_type=${selection}&limit=100&fields=synopsis,rank,rating,genres,studios,popularity,start_date,end_date,mean,num_scoring_users`;
+    const url = `http://localhost:8080/https://api.myanimelist.net/v2/anime/ranking?ranking_type=${selection}&limit=100&fields=synopsis,rank,rating,genres,studios,popularity,start_date,end_date,mean,num_scoring_users`;
     try {
       console.log('Starting fetch process');
       setIsFetching(true); // Set isFetching to true when starting the fetch process

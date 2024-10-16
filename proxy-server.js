@@ -1,15 +1,15 @@
-// Listen on a specific host via the HOST environment variable
-var host = process.env.HOST || '0.0.0.0';
-// Listen on a specific port via the PORT environment variable
-var port = process.env.PORT || 8080;
+// Load the required packages
+const corsAnywhere = require('cors-anywhere');
 
-var cors_proxy = require('cors-anywhere');
-cors_proxy.createServer({
+// Set up the server host and port
+const host = '0.0.0.0'; // Listen on all interfaces
+const port = 8080; // Change this to your desired port
+
+// Create the CORS proxy server
+corsAnywhere.createServer({
     originWhitelist: [], // Allow all origins
     requireHeader: ['origin', 'x-requested-with'],
     removeHeaders: ['cookie', 'cookie2']
-}).listen(port, host, function() {
-    console.log('Running CORS Anywhere on ' + host + ':' + port);
+}).listen(port, host, () => {
+    console.log(`CORS Anywhere running on ${host}:${port}`);
 });
-
-//WIP

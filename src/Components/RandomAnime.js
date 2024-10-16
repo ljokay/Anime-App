@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import NavBar from './Nav';
+
 
 const RandomAnime = () => {
     const navigate = useNavigate();
@@ -18,7 +18,7 @@ const RandomAnime = () => {
             return;
         }
 
-        const url = `http://localhost:5000/https://api.myanimelist.net/v2/anime/${encodeURIComponent(randomNumber)}?fields=nsfw`;
+        const url = `http://localhost:8080/https://api.myanimelist.net/v2/anime/${encodeURIComponent(randomNumber)}?fields=nsfw`;
 
         try {
             const response = await fetch(url, {
@@ -59,7 +59,7 @@ const RandomAnime = () => {
     const fetchSearchAnime = async () => {
         setAnimeList([]);
         let allAnime = [];
-        let nextPage = `http://localhost:5000/https://api.myanimelist.net/v2/anime?q=${encodeURIComponent(animeName)}&fields=nsfw`;
+        let nextPage = `http://localhost:8080/https://api.myanimelist.net/v2/anime?q=${encodeURIComponent(animeName)}&fields=nsfw`;
         const maxPages = 5; // Set a maximum number of pages to fetch
         let pageCount = 0;
     
@@ -81,7 +81,7 @@ const RandomAnime = () => {
                 console.log('Result:', result);
     
                 allAnime = [...allAnime, ...result.data];
-                nextPage = result.paging?.next ? `http://localhost:5000/${result.paging.next}` : null;
+                nextPage = result.paging?.next ? `http://localhost:8080/${result.paging.next}` : null;
                 console.log('Next Page:', nextPage);
     
                 pageCount++;

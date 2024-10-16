@@ -11,7 +11,7 @@ const AnimeInfo = () => {
     useEffect(() => {
         const fetchAnimeDetails = async () => {
             try {
-                const page = `http://localhost:5000/https://api.myanimelist.net/v2/anime/${encodeURIComponent(id)}?fields=synopsis,rank,rating,genres, 
+                const page = `http://localhost:8080/https://api.myanimelist.net/v2/anime/${encodeURIComponent(id)}?fields=synopsis,rank,rating,genres, 
                 studios, popularity, start_date, end_date, mean, num_scoring_users, studios`;
                 const response = await fetch(page, {
                     headers: {
